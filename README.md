@@ -1,5 +1,5 @@
-# :yellow_heart:individualTask:yellow_heart:
-### React를 접하며 진행하는 개인 과제에 대한 기록입니다. 
+# :computer:React 공부 기록입니다.:computer:
+
 ### 2022년 5월 20일 ~ ing
 
 #### React 입문:baby_chick:
