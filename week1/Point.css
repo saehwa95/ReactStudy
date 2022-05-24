@@ -1,0 +1,28 @@
+h3 {
+  text-align: center;
+}
+
+span {
+  color: white;
+  font-weight: 900;
+  background-color: orange;
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #ddd;
+  gap: 10px;
+}
+
+.Point {
+  width: 100%;
+  background-color: purple;
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  color: white;
+}
