@@ -30,13 +30,6 @@ p {
   gap: 10px;
 }
 
-.circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  background-color: #ddd;
-}
-
 .triangle {
   width: 0;
   height: 0;
@@ -59,19 +52,4 @@ color: blue;
 padding: 9px; 
 font-size: 25px; 
 font-weight: bold;
-}
-
-.reset {
-width: 128px; 
-height: 60px; 
-background-color: dodgerblue; 
-border-radius: 6px; 
-text-align: center; 
-margin: auto;
-block-size: 50px;
-display: block;
-cursor: pointer;
-color: white;
-font-size: 18px;
-border: none;
 }

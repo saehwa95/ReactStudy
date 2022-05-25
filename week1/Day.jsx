@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom"
 
 function Day({day, random}) {
 
@@ -12,9 +13,9 @@ function Day({day, random}) {
         <Circle number={2} random={random}/>
         <Circle number={3} random={random}/>
         <Circle number={4} random={random}/>
-        <div className=" triangle">
+        <Link to={`/Point/${day}`}><div className="triangle"></div>
+        </Link>
         </div>
-    </div>
 </>
 )
 }
@@ -26,11 +27,6 @@ const Circle = styled.div`
   background-color: ${props => props.number <= props.random  ? 'yellow' : 'gray'}
 `;
 
-
-// for(let i =0; i < random; i++) {
-//   동그라미까지 칠해줘
-
-// }
 
 
 export default Day;

@@ -1,3 +1,15 @@
+.Detail {
+  background-color: white;
+  width: 80vw;
+  max-width: 350px;
+  margin: 5vh auto;
+  height: 90vh;
+  padding: 5vh 0px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; 
+}
+
 h3 {
   text-align: center;
 }
@@ -10,19 +22,22 @@ span {
   border-radius: 5px;
 }
 
-.circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  background-color: #ddd;
-  gap: 10px;
+.Circles {
+  height: 50px;
+  justify-content: space-around;
+  padding: 10px 50px 0 ;
+  display: flex;
 }
 
 .Point {
-  width: 100%;
+  width: 90%;
   background-color: purple;
   border: none;
   border-radius: 5px;
   padding: 1em;
   color: white;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  
 }
