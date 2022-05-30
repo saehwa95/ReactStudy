@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+body{
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: white;
+    border-bottom: 2px solid rgb(219, 232, 216);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .wrap{
+    margin: auto;
+    margin-top: 20px;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: 400px;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(10, 112, 41);
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  input {
+    height: 28px;
+    padding: 5px 0px;
+    border: none;
+    border-bottom: 2px solid rgb(219, 232, 216);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  button {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 112, 41);
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 20px;
+    border: none;
+  }
+</style>
+
+<body>
+  <div class="App">
+    
+    <div class="header">
+      <a href="/">
+        <h1>중국어 단어장</h1>
+      </a>
+    </div>
+
+    <div class="wrap">
+      <div class="title">
+        <h2>단어 추가하기</h2>
+      </div>
+      
+      <div class="list">
+        <p>단어</p>
+        <input type="text">
+
+        <p>병음</p>
+        <input type="text">
+
+        <p>의미</p>
+        <input type="text">
+
+        <p>예문</p>
+        <input type="text">
+
+        <p>해석</p>
+        <input type="text">
+      </div>
+
+      <button>저장하기</button>
+
+    </div>
+
+  </div>
+</body>
+</html>
