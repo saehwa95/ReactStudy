@@ -1,0 +1,106 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: white;
+  border-bottom: 2px solid rgb(219, 232, 216);
+}
+
+a {
+  text-decoration: none;
+
+}
+
+.headerTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+}
+
+.wrap{
+  margin: auto;
+  margin-top: 20px;
+  padding: 0px 50px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(10, 112, 41);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  vertical-align: baseline;
+}
+
+p{
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  padding: 0px;
+  border: 0px;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+input {
+  height: 28px;
+  padding: 5px 0px;
+  border: none;
+  border-bottom: 2px solid rgb(219, 232, 216);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* button {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(10, 112, 41);
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  align-self: center;
+  cursor: pointer;
+  margin-top: 20px;
+  border: none;
+} */
+
+.saveButton {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.save {
+  margin-top: 15px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(10, 112, 41);
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
