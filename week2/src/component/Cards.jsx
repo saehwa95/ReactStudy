@@ -1,20 +1,18 @@
 import React from "react";
 
 const Cards = (props) => {
-  // // 아래의 목록을 이 함수 안에 div 만들어서 밑에 넣어줄 수 있도록 
-  // 1. 서버에서 데이터 가져오기
-  // 2. 창고에서 데이터 가져오기<store />  <useSelector></useSelector>
-  // 위 데이터 활용해서 데이터 가져오기
-  // 가져온 데이터 콘솔로 먼저 찍어보기 array 형태인지 어떤 형태인지 알 수 있음 
-  // 그 형태에 따라 아래 값 넣어주기
+
+  //9. cardData 변수 선언 하고 uswSelector 사용
+  //10. 임포트 익스포트 useSelector
+  //11. div 태그 안에 내용 받아야하는 것들 {} 사용해서 값 넣어주기
 
   return (
   <div className="cards">
-    <h4>你好</h4>
-    <span>[Nǐ hǎo]</span>
-    <span style={{fontSize:'16px'}}>안녕</span>
-    <span style={{color: 'blue', fontSize: '14px'}}>你好朋友</span>
-    <span style={{color: 'blue', fontSize: '14px'}}>안녕 친구들아</span>
+    <h4>{props.sendData.k1}</h4>
+    <span>{props.sendData.k2}</span> 
+    <span style={{fontSize:'16px'}}>{props.sendData.k3}</span>
+    <span style={{color: 'blue', fontSize: '14px'}}>{props.sendData.k4}</span>
+    <span style={{color: 'blue', fontSize: '14px'}}>{props.sendData.k5}</span>
   </div>
 )
 }
