@@ -2,11 +2,19 @@ import React from "./PlusDic";
 import "../Home.css"
 import { Link } from "react-router-dom";
 import Cards from "./Cards";
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
+import { useEffect } from "react";
+
 
 function Home(){
 
   const cardData = useSelector((data) => data.list);
+  console.log(cardData)
+  
+  const loadDispatch = useDispatch()
+  useEffect(() => {
+    loadDispatch({type:"wordLoad"})
+  })
 
   return(
     <div className="App">

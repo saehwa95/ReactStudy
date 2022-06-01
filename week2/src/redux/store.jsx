@@ -6,26 +6,53 @@
 //7. 스토어 변수 선언
 //8. Cards 파일 넘어가기
 //12. return state 해주기
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
+import thunk from "redux-thunk";
+import {db} from "../firebase.js";
+import {collection,addDoc,getDocs} from "firebase/firestore";
+
+
+const middlewares = [thunk];
+
+const enhancer = applyMiddleware(...middlewares);
 
 const myState = {
   list : [
-  {index:0, k1:'단어', k2:'병음', k3:'의미', k4:'예문', k5:'해석'},
-  {index:1, k1:'단어', k2:'병음', k3:'의미', k4:'예문', k5:'해석'},
   {index:2, k1:'단어', k2:'병음', k3:'의미', k4:'예문', k5:'해석'}
 ]
 };
 
+
 function reducer(state = myState, action) {
+  if(action.type === 'wordLoad') {
+    console.log("참 잘하셨어요^_^");
+    const loadTempFunc =  async () => {
+    const data  = await getDocs(collection(db, "dictionaryPJ"));
+    let meme_list  = []; 
+  
+    data.forEach((doc) => { 
+      meme_list.push({ id: doc.id, ...doc.data() }); 
+    });
+    console.log(meme_list);
+    return {list:meme_list}
+  }
+    loadTempFunc();
+  }
+
   if(action.type === 'wordAdd') {
-
+    const addTempFunc= async () => {
+    const data = await addDoc(collection(db, "dictionaryPJ"),  action.data);
+  }
+    addTempFunc();
     const newList = [...state.list, action.data]
-
+    console.log(newList)
     return {list:newList};
   } 
     return state;
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, enhancer);
 
 export default store;
+
+

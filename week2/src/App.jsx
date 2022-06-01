@@ -4,6 +4,8 @@ import {Routes, Route} from 'react-router-dom'
 import PlusDic from "./component/PlusDic"
 import Home from "./component/Home"
 
+
+
 const App = () => {
   return (
     <>

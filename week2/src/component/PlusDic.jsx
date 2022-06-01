@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "../PlusDic.css"
 import {Link} from "react-router-dom"
 import {useDispatch} from "react-redux";
+import { createStore } from "redux";
 
 
 function PlusDic() {
@@ -12,10 +13,17 @@ function PlusDic() {
   const ref4=useRef()
   const ref5=useRef()
 
-  function addDibtionary() {
-    const word = {index: new Date(), k1:ref1.current.value, k2:ref2.current.value, k3:ref3.current.value, k4:ref4.current.value, k5:ref5.current.value}
+  function addDictionary() {
+    const word = {index: new Date(), 
+      k1:ref1.current.value, 
+      k2:ref2.current.value, 
+      k3:ref3.current.value, 
+      k4:ref4.current.value, 
+      k5:ref5.current.value}
     plusDispatch({type:"wordAdd", data:word})
+  
   }
+
   return (
     <div className="App">
       <div className="header">
@@ -48,7 +56,7 @@ function PlusDic() {
           <div className="saveButton">
             {/* navigation 달아서 onclick 함수 사용하기 앞 페이지로 넘어가는게 아니라 포스팅 작업을 넘겨주는거기때문에!!*/}
             <Link to={`/`}>
-              <button onClick={addDibtionary} className="save" >저장하기</button>
+              <button onClick={addDictionary} className="save" >저장하기</button>
             </Link>
           </div>
         </div>
