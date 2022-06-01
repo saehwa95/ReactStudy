@@ -9,7 +9,7 @@
 import {createStore, applyMiddleware} from 'redux'
 import thunk from "redux-thunk";
 import {db} from "../firebase.js";
-import {collection,addDoc,getDocs} from "firebase/firestore";
+import {collection, addDoc, getDocs} from "firebase/firestore";
 
 
 const middlewares = [thunk];
@@ -17,37 +17,47 @@ const middlewares = [thunk];
 const enhancer = applyMiddleware(...middlewares);
 
 const myState = {
-  list : [
-  {index:2, k1:'단어', k2:'병음', k3:'의미', k4:'예문', k5:'해석'}
-]
+    list: [
+        {index: 2, k1: '단어', k2: '병음', k3: '의미', k4: '예문', k5: '해석'}
+    ]
 };
 
 
 function reducer(state = myState, action) {
-  if(action.type === 'wordLoad') {
-    console.log("참 잘하셨어요^_^");
-    const loadTempFunc =  async () => {
-    const data  = await getDocs(collection(db, "dictionaryPJ"));
-    let meme_list  = []; 
-  
-    data.forEach((doc) => { 
-      meme_list.push({ id: doc.id, ...doc.data() }); 
-    });
-    console.log(meme_list);
-    return {list:meme_list}
-  }
-    loadTempFunc();
-  }
+    if (action.type === 'wordLoad') {
+        console.log("참 잘하셨어요^_^");
+        const loadTempFunc = async () => {
+            const data = await getDocs(collection(db, "dictionaryPJ"));
+            const newList = [];
 
-  if(action.type === 'wordAdd') {
-    const addTempFunc= async () => {
-    const data = await addDoc(collection(db, "dictionaryPJ"),  action.data);
-  }
-    addTempFunc();
-    const newList = [...state.list, action.data]
-    console.log(newList)
-    return {list:newList};
-  } 
+            data.forEach((doc) => {
+                newList.push({id: doc.id, ...doc.data()});
+            });
+            console.log(newList);
+            return {list: newList}
+        }
+        loadTempFunc();
+    }
+
+    if (action.type === 'wordAdd') {
+        const addTempFunc = async () => {
+            const data = await addDoc(collection(db, "dictionaryPJ"), action.data);
+        }
+        addTempFunc();
+        const newList = [...state.list, action.data]
+        console.log(newList)
+        return {list: newList};
+    }
+
+    // action
+    // type - setWord
+    // data - meme_list
+    if (action.type === 'setWord') {
+        const newList = [...action.data]
+        console.log(newList)
+        return {list: newList};
+    }
+
     return state;
 }
 
