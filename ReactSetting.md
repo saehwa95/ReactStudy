@@ -25,10 +25,17 @@ ex) cd namelist
 - index.html 세팅
 ```JavaScrupt
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>React 출석부</title>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <title>React App</title>
   </head>
   <body>
     <div id="root"></div>
